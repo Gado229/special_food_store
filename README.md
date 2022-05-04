@@ -27,13 +27,13 @@ Development Language
 
 ## Execution Procedure
 
-> $ git clone https://github.com/Gado229/special_food_store.git
->> $ cd special_food_store
-> $ bundle install
->> $ rails db:create
-> $ rails db:migrate
->> $ rails s
-> $ rails s -b 0.0.0.0 (Vagrant users)
+$ git clone https://github.com/Gado229/special_food_store.git
+$ cd special_food_store
+$ bundle install
+$ rails db:create
+$ rails db:migrate
+$ rails s
+$ rails s -b 0.0.0.0 (Vagrant users)
 
 ## Catalog Design
 
