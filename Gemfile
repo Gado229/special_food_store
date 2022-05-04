@@ -16,14 +16,16 @@ gem 'webpacker', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.7'
-gem 'bcrypt', '~> 3.1.7'
-gem 'devise'
-gem 'carrierwave', '~> 2.0'
-gem 'mini_magick'
-gem 'bootstrap', '~> 4.4.1'
-gem 'jquery-rails'
-gem 'rails_admin'
+# gem 'jbuilder', '~> 2.7'
+# gem 'bcrypt', '~> 3.1.7'
+# gem 'devise'
+# gem 'carrierwave', '~> 2.0'
+# gem 'mini_magick'
+# gem 'bootstrap', '~> 4.4.1'
+# gem 'jquery-rails'
+# gem 'rails_admin'
+# gem 'rails-i18n'
+# gem 'kaminari'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -32,6 +34,9 @@ gem 'rails_admin'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  # gem 'rspec-rails', '~> 3.8'
+  # gem 'factory_bot_rails'
+  # gem 'rexml'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end

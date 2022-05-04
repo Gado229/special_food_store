@@ -12,29 +12,33 @@ Development Language
 
 ## Employment Term Technology
 
-- Admin Fonction
-- User Fonction
-- Comment Fonction
-- Favorite Fonction
-- Email Notification Fonction
+- Admin Function
+- User Function
+- devise
+- Comment Function with Ajax
+- Favorite Function
+- Email Notification Function
 - Heroku
 
 ## Technology outside the curriculum
 
-- Reservation Fonction
-- Payment Fonction
-- Localisation Fonction
+- Reservation Function
+- Payment Function
+- Localisation Function
 
 ## Execution Procedure
 
-$ git clone https://github.com/Gado229/special_food_store.git <br>
+>> $ git clone https://github.com/Gado229/special_food_store.git <br>
+>> $ cd special_food_store <br>
+>> $ bundle install <br>
+>> $ rails db:create <br>
+>> $ rails db:migrate <br>
+>> $ rails s <br>
+>> $ rails s -b 0.0.0.0 (Vagrant users) <br>
 
-$ cd special_food_store <br>
-$ bundle install <br>
-$ rails db:create <br>
-$ rails db:migrate <br>
-$ rails s <br>
-$ rails s -b 0.0.0.0 (Vagrant users) <br>
+## Check Sheet
+
+[CheckSheet](https://docs.google.com/spreadsheets/d/1rESE5cmB9GxfffT5JE_MwH4rvjPaK02fVPKF3yI_6Zs/edit?usp=sharing)
 
 ## Catalog Design
 
@@ -46,8 +50,7 @@ $ rails s -b 0.0.0.0 (Vagrant users) <br>
 
 ## Wireframe
 
-[Wireframe](https://app.diagrams.net/#G1jhR-_Hi4L4zA_DVm224Sizm7z-KTA5Br)
-[Wireframe](./docs/Wire__ER_Diagramm.jpg)
+![Wireframe](./docs/WireframeER.png)
 
 ## ER Diagram
 
