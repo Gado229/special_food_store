@@ -18,6 +18,7 @@ Development Language
 - Comment Function with Ajax
 - Favorite Function
 - Email Notification Function
+- Kaminari
 - Heroku
 
 ## Technology outside the curriculum
@@ -25,6 +26,8 @@ Development Language
 - Reservation Function
 - Payment Function
 - Localisation Function
+- Cloudinary
+
 
 ## Execution Procedure
 
@@ -60,4 +63,4 @@ Development Language
 ## Screen Transition Diagram
 
 [Screen Transition](https://drive.google.com/file/d/1KPAUgU9LizMAL9rKoPZSL5PGuEd3M1HT/view?usp=sharing)
-![Screen Transition](./docs/Transition_screen_ER_Diagramm.jpg)
+![Screen Transition](./docs/Transition_screen_ER_Diagramm.png)
