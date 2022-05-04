@@ -28,11 +28,11 @@ Development Language
 ## Execution Procedure
 
 > $ git clone https://github.com/Gado229/special_food_store.git
-> $ cd special_food_store
+>> $ cd special_food_store
 > $ bundle install
-> $ rails db:create
+>> $ rails db:create
 > $ rails db:migrate
-> $ rails s
+>> $ rails s
 > $ rails s -b 0.0.0.0 (Vagrant users)
 
 ## Catalog Design
@@ -56,4 +56,4 @@ Development Language
 ## Screen Transition Diagram
 
 [Screen Transition](https://drive.google.com/file/d/1KPAUgU9LizMAL9rKoPZSL5PGuEd3M1HT/view?usp=sharing)
-![Screen Transition](./Transition_screen_ER_Diagramm.jpg)
+![Screen Transition](./docs/Transition_screen_ER_Diagramm.jpg)
