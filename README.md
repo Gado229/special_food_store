@@ -48,7 +48,7 @@ Development Language
 ## ER Diagram
 
 [ER Diagram](https://drive.google.com/file/d/1Ue5ZTy0A4AXXlyXMDO01pwizhhFDpMnh/view?usp=sharing)
-![ER Diagram picture](./docs/Table_definition_ER_Diagramm.png)
+![ER Diagram picture](./docs/Table_ER_Diagramm.png)
 
 ## Screen Transition Diagram
 
