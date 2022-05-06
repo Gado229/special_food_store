@@ -12,22 +12,12 @@ Development Language
 
 ## Employment Term Technology
 
-- Admin Function
-- User Function
 - devise
-- Comment Function with Ajax
-- Favorite Function
-- Email Notification Function
-- Kaminari
-- Heroku
+- Comment function with Ajax
 
 ## Technology outside the curriculum
 
-- Reservation Function
-- Payment Function
-- Localisation Function
 - Cloudinary
-
 
 ## Execution Procedure
 
