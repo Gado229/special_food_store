@@ -14,6 +14,7 @@ Development Language
 
 - devise
 - Comment function with Ajax
+- Heroku
 
 ## Technology outside the curriculum
 
@@ -43,15 +44,15 @@ Development Language
 
 ## Wireframe
 
-[Wireframe](https://drive.google.com/file/d/1c8YINJFYdqm3vKQUW62f-nz_RFUThDE-/view?usp=sharing)
+[Wireframe](https://drive.google.com/file/d/1127S3WGqAXmL-IguTj2zwzPgWpMWqHYI/view?usp=sharing)
 ![Wireframe](./docs/WireframeER.png)
 
 ## ER Diagram
 
-[ER Diagram](https://drive.google.com/file/d/1_M1g5hQ-oVIMA2cx5BjN9SMjT2FnPsuk/view?usp=sharing)
+[ER Diagram](https://drive.google.com/file/d/19HSVeuZS287LY8ShTMJtQNsWlpCpm815/view?usp=sharing)
 ![ER Diagram picture](./docs/Table_ER_Diagramm.png)
 
 ## Screen Transition Diagram
 
-[Screen Transition](https://drive.google.com/file/d/1P000qiH1LFevW9HtfHGxodm4l-TQp_HK/view?usp=sharing)
+[Screen Transition](https://drive.google.com/file/d/1JjAxYIF6c0Q5N27qSz0av3lb4IoC80vm/view?usp=sharing)
 ![Screen Transition](./docs/Transition_screen_ER_Diagramm.png)
