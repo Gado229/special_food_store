@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root to: "foods#index"
+  devise_for :users
   resources :foods
+  root to: "foods#index"
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end

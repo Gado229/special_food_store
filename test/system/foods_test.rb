@@ -14,8 +14,6 @@ class FoodsTest < ApplicationSystemTestCase
     visit foods_url
     click_on "New Food"
 
-    fill_in "Description", with: @food.description
-    fill_in "Name", with: @food.name
     click_on "Create Food"
 
     assert_text "Food was successfully created"
@@ -26,8 +24,6 @@ class FoodsTest < ApplicationSystemTestCase
     visit foods_url
     click_on "Edit", match: :first
 
-    fill_in "Description", with: @food.description
-    fill_in "Name", with: @food.name
     click_on "Update Food"
 
     assert_text "Food was successfully updated"
