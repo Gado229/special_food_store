@@ -24,9 +24,10 @@ gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
-# gem 'rails_admin'
 gem 'rails-i18n'
 gem 'kaminari'
+gem 'rails_admin', '~> 3.0'
+gem 'cancancan', '~> 3.3.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
