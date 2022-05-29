@@ -28,6 +28,7 @@ gem 'rails-i18n'
 gem 'kaminari'
 gem 'rails_admin', '~> 3.0'
 gem 'cancancan', '~> 3.3.0'
+gem 'cloudinary'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

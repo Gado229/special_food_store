@@ -1,4 +1,42 @@
 <p id="notice"><%= notice %></p>
 
+<style>
+  strong{
+    font-size: 20px;
+    font-family: fantasy;
+    color: black;
+  }
+  span{
+    color: black;
+    font-size: 18px;
+    font-family: 'Lucida';
+  }
+</style>
+<div class="container">
+<p>
+  <%= image_tag(@food.image.url(:thumbnail), :alt => @food.name) %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @food.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @food.description %>
+</p>
+
+<p>
+  <strong>Ce plat coûte</strong>
+  <%= @food.price %> <span>FCFA</span>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @restaurant.phone %>
+</p>
+
 <%= link_to 'Edit', edit_food_path(@food) %> |
 <%= link_to 'Back', foods_path %>
+</div>

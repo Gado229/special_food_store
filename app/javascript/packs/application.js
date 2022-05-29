@@ -15,3 +15,11 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+
+// sur les directives prises en charge.
+//
+// = require rails-ujs
+// = require turbolinks
+// = require jquery/dist/jquery.js
+// = require_tree.

@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
+root to: "foods#index"
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
-  resources :foods
-  root to: "foods#index"
+  resources :users, only: [:show]
+  resources :foods do
+    resources :comments
+    collection do
+      post :confirm
+    end
+  end
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

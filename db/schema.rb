@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_26_201841) do
+ActiveRecord::Schema.define(version: 2022_05_27_105225) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "food_id", null: false
+    t.bigint "user_id", null: false
+    t.string "title"
+    t.string "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["food_id"], name: "index_comments_on_food_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "foods", force: :cascade do |t|
     t.string "name", null: false
@@ -55,11 +66,14 @@ ActiveRecord::Schema.define(version: 2022_05_26_201841) do
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
     t.boolean "admin"
+    t.string "name"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "foods"
+  add_foreign_key "comments", "users"
   add_foreign_key "foods", "restaurants"
   add_foreign_key "restaurants", "users"
 end

@@ -13,3 +13,124 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-color: #efe17c;
+  font-family: Verdana;
+}
+
+.bground{
+  background-color: #B4AD0D;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.heading{
+   padding:20px 0;
+   margin:0 auto;
+   width:970px;
+ }
+
+ .header_border {
+    height:28px;
+    margin: 0 3px 0 9px;
+  }
+
+  .insta_logo {
+    height:34px;
+  }
+
+
+  .insta_icon{
+    width:25px;
+    height:25px;
+    margin-left: 20px;
+  }
+
+  .user_img {
+    width:25px;
+    height:25px;
+    margin-left:30px;
+  }
+
+  main {
+    width:960px;
+    margin:0 auto;
+    margin-top:100px;
+  }
+
+  .left_box {
+    float:left;
+  }
+
+  .share_box {
+    margin-top:3px;
+  }
+
+  .main_box {
+    margin-top:28px;
+    border-radius: 3px;
+     border: 1px solid #DBDBDB;
+  }
+
+  .main_box table {
+    width: 620px;
+  }
+
+  .main_box_img {
+    width: 100%;
+  }
+
+  .main_box_head {
+    padding:15px;
+    border-bottom: 1px solid #DBDBDB;
+  }
+
+  .main_box_bottom {
+    padding:10px 15px 15px 15px;
+    border-top: 1px solid #DBDBDB;
+   background-color: white;
+  }
+
+  .main_box_bottom p {
+    padding: 0;
+    margin: 0;
+  }
+
+  .main_box_bottom img {
+    padding: 0;
+    margin-bottom: 8px;
+  }
+
+  .add_contribute {
+    float:right;
+    color:#C3E0FB;
+    font-weight:bold;
+  }
+
+  .contributer {
+    font-size:14px;
+    color: black;
+    font-weight: bold;
+  }
+
+  .contributer:hover {
+    color: black;
+    text-decoration: none;
+  }
+
+  .contributer_img {
+    width:32px;
+    height:32px;
+    margin-right:10px;
+    border: 1px solid #DBDBDB;
+    border-radius: 30px;
+  }
+
+  .main_box_menu {
+    float:right;
+    padding-top:5px;
+    padding-right:5px;
+  }
