@@ -1,55 +1,71 @@
 class RestaurantsController < ApplicationController
-    before_action :set_food, only: [:create, :edit, :update]
+  before_action :set_restaurant, only: %i[ show edit update destroy ]
+  PER = 5
+
+  # GET /restaurants or /restaurants.json
+  def index
+    @restaurants = Restaurant.all.order(id: "desc").page params[:page]
+  end
+
+  # GET /restaurants/1 or /restaurants/1.json
+  def show
+  end
+
+  # GET /restaurants/new
+  def new
+    @restaurant = Restaurant.new
+  end
+
+  # GET /restaurants/1/edit
+  def edit
+  end
+
+  # POST /restaurants or /restaurants.json
   def create
-    @food = Food.find(params[:food_id])
-    @restaurant = @food.restaurants.build(restaurant_params)
-    @restaurant.user_id =current_user.id
+    @restaurant = Restaurant.new(restaurant_params)
 
     respond_to do |format|
       if @restaurant.save
-        format.js { render :index }
+        format.html { redirect_to restaurant_url(@restaurant), notice: "Félisitation, vous avez créé un Restaurant." }
+        format.json { render :show, status: :created, location: @restaurant }
       else
-        format.html { redirect_to food_path(@food), notice: 'Impossible de restauranter...' }
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @restaurant.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  def edit
-    @restaurant = @food.restaurants.find(params[:id])
-    respond_to do |format|
-      flash.now[:notice] = 'コメントの編集中'
-      format.js { render :edit }
-    end
-  end
+  # PATCH/PUT /restaurants/1 or /restaurants/1.json
   def update
-    @restaurant = @food.restaurants.find(params[:id])
     respond_to do |format|
       if @restaurant.update(restaurant_params)
-        flash.now[:notice] = 'コメントが編集されました'
-        format.js { render :index }
+        format.html { redirect_to restaurant_url(@restaurant), notice: "Félisitation, vous avez bien modifié un Restaurant." }
+        format.json { render :show, status: :ok, location: @restaurant }
       else
-        flash.now[:notice] = 'コメントの編集に失敗しました'
-        format.js { render :edit }
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @restaurant.errors, status: :unprocessable_entity }
       end
     end
   end
 
+  # DELETE /restaurants/1 or /restaurants/1.json
   def destroy
-    @restaurant = Restaurant.find(params[:id])
     @restaurant.destroy
+
     respond_to do |format|
-      flash.now[:notice] = 'コメントが削除されました'
-      format.js { render :index }
+      format.html { redirect_to restaurants_url, notice: "Félisitation, ce Restaurant a bien été supprimé" }
+      format.json { head :no_content }
     end
   end
 
   private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_restaurant
+      @restaurant = Restaurant.find(params[:id])
+    end
 
-  def restaurant_params
-    params.require(:restaurant).permit(:name, :adress, :phone)
-  end
-
-  def set_food
-    @food = Food.find(params[:food_id])
-  end
+    # Only allow a list of trusted parameters through.
+    def restaurant_params
+      params.require(:restaurant).permit(:name, :adress, :phone)
+    end
 end

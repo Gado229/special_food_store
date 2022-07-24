@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Connectez-vous ici !</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <%= image_tag 'top.png', class: 'topimage' %>
+        </div>
+        <div class="col-sm-6">
+          <div class="right-column text-center">
+            <%= image_tag 'logo.png', class: 'SFSlogo' %>
+              <p class="infos">
+                Bienvenu chez vous ! Veuillez vous connecter et si vous n'avez pas encore un compte, c'est le moment d'en créer !
+              </p>
+
+              <hr>
+              <% if user_signed_in? %>
+            <ul>
+              <li><%= link_to "Démarrer", foods_path, class:"btn btn-primary btn-block" %></li>
+              <li><%= link_to "Ma Page", current_user, class:"btn btn-primary btn-block" %></li>
+              <li><%= link_to "Liste des Restaurants", restaurants_path, class:"btn" %></li>
+              <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class:"btn btn-primary btn-block" %></li>
+            </ul>
+              <% if current_user.admin? %>
+              <button class="btn btn-primary btn-block">
+                <%= link_to rails_admin_path do %>
+                <%= image_tag 'admin.png', class: 'googlelogo' %>
+                <% end %>
+              </button>
+                <% end %>
+                <% else %>
+                <div class="infos">
+                  <%= link_to "Se connecter", new_user_session_path %>
+                <p class="infos">Voulez-vous créer un compte !</p>
+                  <%= link_to "S'enrégistrer", new_user_registration_path %>
+                </div>
+                <% end %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>

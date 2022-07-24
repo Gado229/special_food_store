@@ -1,42 +1,56 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
 
-<style>
-  strong{
-    font-size: 20px;
-    font-family: fantasy;
-    color: black;
-  }
-  span{
-    color: black;
-    font-size: 18px;
-    font-family: 'Lucida';
-  }
-</style>
+  <% if current_user.id == @food.user.id  %>
+    <%= link_to 'Modifier', edit_food_path(@food) %>
+  <% end %>
+<p>
+  <%= image_tag(@food.image.url, :alt => @food.name, class: "main_box_img") %>
+</p>
+
+<%= @food.user.email %>
+<%= l(@food.created_at, format: :long) %>
+
 <div class="container">
-<p>
-  <%= image_tag(@food.image.url(:thumbnail), :alt => @food.name) %>
-</p>
+  <div class="food-text">
+    <p><strong>Titre</strong>:
+        <%= @food.name %>
+    </p>
+    <p><strong>Contenu</strong>:
+        <%= @food.description %>
+    </p>
+    <p><strong>Ce plat coûte</strong>
+        <%= @food.price %> <span>FCFA</span>
+    </p>
+  </div>
+<hr>
+<h2> <%= @food.comments.count %> commentaires</h2>
+<p>Liste des commentaires (le contenu en dessous est important)</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @food.name %>
-</p>
+  <div class="food-text">
+    <p><strong>Contenu</strong>：<%= @comment.content %></p>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @food.description %>
-</p>
+  <!-- Obtenez l'identifiant de ce HTML appelé comments_area et mettez à jour uniquement cette partie de la division. -->
+  <div id="comments_area" class="comments_area_form">
+    <!-- pour afficher la liste des commentaires publiés sur la page de détail du food. -->
+    <%= render partial: 'comments/index', locals: { comments: @comments, food: @food } %>
+  </div>
 
-<p>
-  <strong>Ce plat coûte</strong>
-  <%= @food.price %> <span>FCFA</span>
-</p>
+<h3>Ajoutez un commentaire</h3>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @restaurant.phone %>
-</p>
+  <!-- rend le champ de saisie des commentaires à afficher sur la page détaillée du food. -->
+  <%= render partial: 'comments/form', locals: { comment: @comment, food: @food } %>
 
-<%= link_to 'Edit', edit_food_path(@food) %> |
-<%= link_to 'Back', foods_path %>
+  <%= link_to 'Retourner', foods_path %>
+
+<!-- /.card-body -->
+</div>
+<!-- /.card -->
+</div>
+<!-- ./col -->
+</div>
+</div>
 </div>

@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @foods = @user.foods.ordered.kaminari(params[:page])
   end
 
   def update
@@ -34,7 +35,7 @@ class UsersController < ApplicationController
 private
 
  def user_params
-   params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone )
+   params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :image_cache )
  end
 
  def correct_user

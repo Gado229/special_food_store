@@ -1,10 +1,10 @@
-<%= form_with(model: food, local: true) do |form| %>
-  <% if food.errors.any? %>
+<%= form_with(model: @food, local: true) do |form| %>
+  <% if @food.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(food.errors.count, "error") %> prohibited this food from being saved:</h2>
+      <h2><%= pluralize(@food.errors.count, "error") %> prohibited this food from being saved:</h2>
 
       <ul>
-        <% food.errors.full_messages.each do |message| %>
+        <% @food.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -13,6 +13,10 @@
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.select :restaurant_id, Restaurant.all.collect { |p| [p.name, p.id]}, class: "search_label", include_blank: true %>
   </div>
 
   <div class="field">
@@ -26,13 +30,9 @@
   </div>
 
   <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :picture %>
+    <%= form.label :image %>
     <%= image_tag(@food.image.url) if @food.image && @food.image.url %>
+
     <%= form.file_field :image %>
     <%= form.hidden_field :image_cache %>
   </div>

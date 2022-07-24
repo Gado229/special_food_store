@@ -1,10 +1,14 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  PER = 5
+
+  def top
+  end
 
   # GET /foods or /foods.json
   def index
-    @foods = Food.all.order(id: "desc")
+    @foods = Food.all.order(id: "desc").page params[:page]
+    @users = User.all
   end
 
   # GET /foods/1 or /foods/1.json
@@ -16,31 +20,20 @@ class FoodsController < ApplicationController
   # GET /foods/new
   def new
     @food = Food.new
+    @restaurants = Restaurant.all.order(name: "asc").page params[:page]
   end
 
   # GET /foods/1/edit
   def edit
-   #  if Food.find(params[:id]).user.name == current_user.name
-   #   @food = Food.find(params[:id])
-   # else
-   #   redirect_to foods_path
-   # end
-      if Food.find(params[:id]).user.name == current_user.name
-        @food = Food.find(params[:id])
-      else
-        redirect_to foods_path
-      end
-      unless @food.user_id == current_user.id
-       redirect_to foods_path, notice: "Non autorisé."
-      end
-    end
+  end
 
   # POST /foods or /foods.json
   def create
-
-    @food = current_user.foods.build(food_params)
-    @restaurant.user_id = current_user.id
-
+    # @food = current_user.foods.build(food_params)
+    @food = Food.new(food_params.merge(user_id: current_user.id))
+    if params[:back]
+        render :new
+     else
     respond_to do |format|
       if @food.save
         format.html { redirect_to food_url(@food), notice: "Food was successfully created." }
@@ -50,6 +43,7 @@ class FoodsController < ApplicationController
         format.json { render json: @food.errors, status: :unprocessable_entity }
       end
     end
+  end
   end
 
   # PATCH/PUT /foods/1 or /foods/1.json
@@ -82,6 +76,6 @@ class FoodsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def food_params
-      params.require(:food).permit(:name, :phone, :description, :price, :image, :image_cache)
+      params.require(:food).permit(:name, :description, :price, :image, :image_cache, :user_id, :restaurant_id)
     end
 end

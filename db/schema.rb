@@ -32,9 +32,11 @@ ActiveRecord::Schema.define(version: 2022_05_27_105225) do
     t.float "price"
     t.text "image"
     t.bigint "restaurant_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["restaurant_id"], name: "index_foods_on_restaurant_id"
+    t.index ["user_id"], name: "index_foods_on_user_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -65,7 +67,7 @@ ActiveRecord::Schema.define(version: 2022_05_27_105225) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.string "name"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -75,5 +77,6 @@ ActiveRecord::Schema.define(version: 2022_05_27_105225) do
   add_foreign_key "comments", "foods"
   add_foreign_key "comments", "users"
   add_foreign_key "foods", "restaurants"
+  add_foreign_key "foods", "users"
   add_foreign_key "restaurants", "users"
 end

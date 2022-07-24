@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
-root to: "foods#index"
+
+  root 'foods#top'
+  # get 'foods/top'
+
+  resources :restaurants
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   devise_for :users
+
   resources :users, only: [:show]
+
   resources :foods do
     resources :comments
     collection do

@@ -1,48 +1,49 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Foods</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Details</th>
-      <th>Food Cost</th>
-      <th>Picture</th>
-      <th>Phone</th>
-      <th>Admin/User</th>
-      <th colspan="6"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @foods.each do |food| %>
-      <tr>
-        <td><%= link_to food.name, food_path(food.id) %></td>
-        <td><%= food.name %></td>
-        <td><%= food.description %></td>
-        <td><span>$</span><%= food.price %></td>
-        <td>
-          <% if food.image.file.nil? %>
-            <% else %>
-            <%= image_tag food.image.url, class: 'main_box_img' %>
-          <% end %>
-        </td>
-
-        <td><%= User.find(food.user_id).name%></td>
-
-        <% if current_user.id == food.user.id %>
-
-        <td><%= link_to 'Edit', edit_food_path(food) %></td>
-        <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% else %>
-        <td><%= link_to 'Voir details et commander', food_path(food.id), class:'btn btn-outline-primary' %></td>
-        <% end %>
-      </tr>
-          <% end %>
-  </tbody>
-</table>
-
+<div  class="banner">
+  <div class="share_box">
+    <%= link_to 'Faire une publication', new_food_path, class: 'btn btn-primary text-light' %> | | <%= link_to 'Ajoutez un Restaurant', new_restaurant_path, class: 'btn btn-secondary text-light' %>
+  </div>
 <br>
-
-<%= link_to 'New Food', new_food_path %>
+    <% if @foods != nil %>
+    <% @foods.each do |food| %>
+    <div class="main_box">
+      <table>
+        <tr>
+          <td>
+            <% if food.image.file.nil? %>
+              <% else %>
+              <%= image_tag food.image.url, class: 'main_box_img' %>
+            <% end %>
+          </td>
+        </tr>
+      <tr>
+        <td>
+          <div class="main_box_head">
+            <%= User.find(food.user_id).name%><br>
+            Ce plât s'appelle <%= food.name %><br>
+            Ce plât coûte <%= food.price %><span>FCFA</span><br>
+            Par le restaurant <%= link_to Restaurant.find(food.restaurant_id).name, restaurants_path %>
+            <br><br>
+            <%= image_tag "like.png", class: 'icon_img' %>
+            <%= image_tag "comment.png", class: 'icon_img' %>
+            <br><br>
+            <div class="main_box_menu">
+              <% if current_user.id == food.user.id %>
+              <%= link_to 'Afficher', food %>
+              <%= link_to 'Modifier', edit_food_path(food) %>
+              <%= link_to 'Supprimer', food, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to 'Ma page', current_user %>
+              <% else %>
+              <%= link_to 'Plus de détails', food_path(food.id), class:'btn btn-outline-primary' %>
+              <% end %>
+              <%= "Il y à #{time_ago_in_words(food.created_at || Time.now)}" %> <br>
+            </div>
+          </div>
+        </td>
+      </tr>
+      </table>
+    </div>
+      <% end %>
+    <% end %>
+<%= paginate @foods %>
+</div>
