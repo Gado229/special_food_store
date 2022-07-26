@@ -31,13 +31,12 @@
               <% else %>
               <%= link_to 'Plus de détails', food_path(food.id), class:'btn btn-outline-primary' %>
               <% end %>
-
               <%= "Il y à #{time_ago_in_words(food.created_at || Time.now)}" %><br>
               <h2><%= food.comments.count %> commentaires</h2>
             </div>
           </div>
         </td>
-      </tr>
+       </tr>
       </table>
     </div>
       <% end %>

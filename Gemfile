@@ -10,33 +10,26 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
-# gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'rexml'
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
-# gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 gem 'rails-i18n'
 gem 'kaminari'
 gem 'rails_admin', '~> 3.0'
 gem 'cancancan', '~> 3.3.0'
 gem 'cloudinary'
-gem 'faker'
-gem 'bootstrap-sass', '~> 3.3.6'
-
-# gem 'image_processing', '~> 1.2'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.8'
-  gem 'factory_girl_rails'
-  gem 'rails-controller-testing'
-  gem 'headless'
-  gem 'poltergeist'
-  gem 'database_cleaner'
-  # gem 'factory_bot_rails'
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
+  gem 'factory_bot_rails'
+  gem 'spring'
+  gem 'faker'
+  gem 'launchy'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end

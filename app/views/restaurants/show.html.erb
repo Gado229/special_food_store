@@ -1,10 +1,10 @@
-<p id="notice"><%= notice %></p>
+<div class="banner">
+  <div class="container">
+    <p><strong>Nom</strong>：<%= @restaurant.name %></p>
+    <p><strong>Adresse</strong>：<%= @restaurant.adress %></p>
+    <p><strong>Téléphone</strong>：(+229)<%= @restaurant.phone %></p>
+  </div>
 
-<div class="container">
-  <p><strong>Nom</strong>：<%= @restaurant.name %></p>
-  <p><strong>Adresse</strong>：<%= @restaurant.adress %></p>
-  <p><strong>Téléphone</strong>：(+229)<%= @restaurant.phone %></p>
+  <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+  <%= link_to 'Back', restaurants_path %>  
 </div>
-
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>

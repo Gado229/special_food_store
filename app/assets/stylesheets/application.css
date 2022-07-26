@@ -2,7 +2,6 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap-sprockets";
  @import "bootstrap";
 
 *
@@ -117,12 +116,6 @@ header .search .fa-solid
   border-right: 1px solid #fff;
   padding-right: 15px;
 }
-/* header .don
-{
-  position: absolute;
-  top: 30%;
-  right: 10px;
-} */
 
 /* -------------------- fin header ----------------------- */
 
@@ -174,7 +167,17 @@ button
   float: right;
 }
 
-.banner infos
+.row .topimage .infos
+{
+  font-weight: 10px;
+  line-height: 20px;
+  height: 400px;
+  font-size: 20px;
+  color: #000;
+  margin: 10px;
+}
+
+.banner .infos
 {
   font-size: 100px;
   color: #999;
@@ -200,7 +203,7 @@ button
 {
   background: #fff;
   border: 1px solid #e6e6e6;
-  width: 350px;
+  width: 500px;
   margin: 10px;
   padding: 40px;
 }
@@ -211,12 +214,12 @@ button
   height: 70px;
 }
 
-.infos
+.right-column .infos
 {
-  font-weight: 600px;
+  font-weight: 10px;
   line-height: 20px;
-  font-size: 17px;
-  color: #999;
+  font-size: 20px;
+  color: #000;
   margin: 0;
 }
 

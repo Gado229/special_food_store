@@ -11,7 +11,7 @@ class Food < ApplicationRecord
 
   validates :name, :description, null:false, presence: true, length: { minimum: 1 }
   validates :price, null:false
-  validates :image, presence: true
+  validates :image, presence: false
 
   scope :kaminari, -> (kaminari_page){ page(kaminari_page).per(5) }
 

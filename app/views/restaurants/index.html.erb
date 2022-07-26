@@ -1,9 +1,9 @@
 <div class="banner">
   <div class="card">
     <h1>Liste des Restaurants</h1>
-
-    <%= link_to 'New Restaurant', new_restaurant_path %> || <%= link_to 'Acceuil', foods_path %>
-
+<button><%= link_to 'New Restaurant', new_restaurant_path, class: 'btn btn-primary text-light' %></button>
+<button><%= link_to 'Acceuil', foods_path, class: 'btn btn-secondary text-light' %></button>
+<br><br>
     <table>
       <thead>
         <tr>
@@ -23,6 +23,5 @@
         <% end %>
       </tbody>
     </table>
-
   </div>
 </div>

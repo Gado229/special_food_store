@@ -2,8 +2,12 @@ production:
   cloud_name: 'dvreazuho'
   api_key: '119749114112574'
   api_secret: 'rjKjKY_VkHRyjb3LI98AF799NuU'
+  enhance_image_tag: true
+  static_file_support: true
 
 development:
   cloud_name: 'dvreazuho'
   api_key: '119749114112574'
   api_secret: 'rjKjKY_VkHRyjb3LI98AF799NuU'
+  enhance_image_tag: true
+  static_file_support: false
