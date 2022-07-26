@@ -19,3 +19,4 @@ user = User.create(
         email: "spfoodinvite@gmail.com",
         password: "invite12345",
         password_confirmation: "invite12345")
+        

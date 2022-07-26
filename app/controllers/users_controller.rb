@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
   before_action :set_user, only: %i[ create show edit update comments ]
+before_action :forget_user, only: [:show]
 
  def index
    @users = User.all
@@ -48,4 +49,13 @@ private
  def set_user
    @user = User.find(params[:id])
  end
+
+ def forget_user
+   if current_user.admin == false
+     if current_user.id != params[:id].to_i
+       redirect_to foods_path
+     end
+   end
+ end
+
 end

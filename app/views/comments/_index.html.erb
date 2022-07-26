@@ -4,8 +4,9 @@
       <li>
         <div class="comment-content" id ="this_comment_<%= comment.id %>"</div>
         <p>
-          <%= comment.content %>.<%= 'Commenter par' %>：<%= comment.user.name %>
-          <% if current_user.id == comment.user_id %>        
+          <%= comment.content %>.<br>
+          <%= 'Commenter par' %>：<%= comment.user.name %>
+          <% if current_user.id == comment.user_id %>
         </p>
         <p>
           <%= link_to "Modifier le commentaire", edit_food_comment_path(food, comment), remote: true %>

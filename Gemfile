@@ -23,13 +23,19 @@ gem 'rails_admin', '~> 3.0'
 gem 'cancancan', '~> 3.3.0'
 gem 'cloudinary'
 gem 'faker'
+gem 'bootstrap-sass', '~> 3.3.6'
 
 # gem 'image_processing', '~> 1.2'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
-  # gem 'rspec-rails', '~> 3.8'
+  gem 'rspec-rails', '~> 3.8'
+  gem 'factory_girl_rails'
+  gem 'rails-controller-testing'
+  gem 'headless'
+  gem 'poltergeist'
+  gem 'database_cleaner'
   # gem 'factory_bot_rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

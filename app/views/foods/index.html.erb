@@ -1,9 +1,8 @@
-<h1>Foods</h1>
-<div  class="banner">
-  <div class="share_box">
-    <%= link_to 'Faire une publication', new_food_path, class: 'btn btn-primary text-light' %> | | <%= link_to 'Ajoutez un Restaurant', new_restaurant_path, class: 'btn btn-secondary text-light' %>
-  </div>
-<br>
+<div class="container">
+  <button><%= link_to 'Faire une publication', new_food_path, class: 'btn btn-primary text-light' %></button>
+     | |
+  <button><%= link_to 'Ajoutez un Restaurant', new_restaurant_path, class: 'btn btn-secondary text-light' %></button>
+<br><br>
     <% if @foods != nil %>
     <% @foods.each do |food| %>
     <div class="main_box">
@@ -19,14 +18,10 @@
       <tr>
         <td>
           <div class="main_box_head">
-            <%= User.find(food.user_id).name%><br>
-            Ce plât s'appelle <%= food.name %><br>
-            Ce plât coûte <%= food.price %><span>FCFA</span><br>
-            Par le restaurant <%= link_to Restaurant.find(food.restaurant_id).name, restaurants_path %>
-            <br><br>
-            <%= image_tag "like.png", class: 'icon_img' %>
-            <%= image_tag "comment.png", class: 'icon_img' %>
-            <br><br>
+            <h5><%= User.find(food.user_id).name%></h5>
+            Ce plât est nommé <h5><%= food.name %></h5>
+            Ce plât coûte <strong><%= food.price %>FCFA</strong>
+            Par le restaurant <h4><%= link_to Restaurant.find(food.restaurant_id).name, restaurants_path %></h4>
             <div class="main_box_menu">
               <% if current_user.id == food.user.id %>
               <%= link_to 'Afficher', food %>
@@ -36,7 +31,9 @@
               <% else %>
               <%= link_to 'Plus de détails', food_path(food.id), class:'btn btn-outline-primary' %>
               <% end %>
-              <%= "Il y à #{time_ago_in_words(food.created_at || Time.now)}" %> <br>
+
+              <%= "Il y à #{time_ago_in_words(food.created_at || Time.now)}" %><br>
+              <h2><%= food.comments.count %> commentaires</h2>
             </div>
           </div>
         </td>
@@ -45,5 +42,5 @@
     </div>
       <% end %>
     <% end %>
-<%= paginate @foods %>
 </div>
+<%= paginate @foods %>
