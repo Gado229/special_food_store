@@ -21,7 +21,7 @@
             <h5><%= User.find(food.user_id).name%></h5>
             Ce plât est nommé <h5><%= food.name %></h5>
             Ce plât coûte <strong><%= food.price %>FCFA</strong>
-            Par le restaurant <h4><%= link_to Restaurant.find(food.restaurant_id).name, restaurants_path %></h4>
+            Par le restaurant <h4><%= Restaurant.find(food.restaurant_id).name %></h4>
             <div class="main_box_menu">
               <% if current_user.id == food.user.id %>
               <%= link_to 'Afficher', food %>
@@ -39,6 +39,8 @@
        </tr>
       </table>
     </div>
+    <hr>
+    <hr>
       <% end %>
     <% end %>
 </div>
