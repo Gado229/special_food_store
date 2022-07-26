@@ -1,4 +1,4 @@
-
+<div class="banner">
   <h2>Connecter-toi !</h2>
 
   <ul class="nav justify-content-end">
@@ -9,13 +9,10 @@
         <%= f.hidden_field :password ,value: "invite12345" %>
       </div>
       <div class="actions">
-
-          <%= f.submit "Invité(e)s!!! Connectez-vous", class: "btn btn-success" %>||||
-
+          <%= f.submit "Invité(e)s!!! Connectez-vous", class: "btn btn-success" %>
       </div>
     <% end %>
   </li>
-
   <li class="nav-item">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
@@ -23,11 +20,8 @@
         <%= f.hidden_field :password ,value: "admin12345" %>
       </div>
       <div class="actions">
-
           <%= f.submit "Admin!!! Connectez-vous", class: "btn btn-success" %>
-
       </div>
-
   <% end %>
   </li>
     </ul>
@@ -56,3 +50,4 @@
   <% end %>
 
   <%= render "devise/shared/links" %>
+</div>
