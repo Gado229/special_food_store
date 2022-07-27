@@ -16,20 +16,30 @@
             <div class="right-column text-center">
               <%= image_tag 'logo.png', class: 'SFSlogo' %>
                 <p class="infos">
-                  Bienvenu chez vous !
+                  Bienvenu chez vous, trouvez un bon restaurant à côté ou
+                  Faite connaitre votre restaurant et attirez de nouveau clients ....
                 </p>
                 <hr>
                 <% if user_signed_in? %>
                 <%= link_to "Démarrer", foods_path, class:'fs-15 btn btn-warning' %>
               <% else %>
-                <h4>Vous n'etes pas connecter, connectez-vous ou créer un compte pour jouir de la platforme</h4>
+                <h6>Vous n'etes pas connecter, clique sur "connecter" ou créer un compte pour jouir de la platforme</h6>
               <% end %>
             </div>
           </div>
             <div class="topimage">
-              <%= image_tag 'top.png', class: 'topimage_img' %>
               <p class="infos">
-                Bienvenu chez vous ! Veuillez vous connecter et si vous n'avez pas encore un compte, c'est le moment d'en créer !
+                "Special Food Store" est une plateforme logistique qui sert d'intermédiaire entre les restaurants et les clients potentiels.
+                Nous proposons aux restaurants la digitalisation de leurs services pour recevoir les commandes des clients en temps réel.
+                Nous assurons également la livraison de ces commandes aux clients.
+                Ainsi, les clients peuvent satisfaire leurs besoins en temps réel et, surtout, sans effort.
+                "Special Food Store" est développé pour permettre à tous ceux qui n'ont pas le temps de se rendre dans un maquis,
+                un fast-food ou un restaurant pendant la journée, de se faire livrer leur repas sur leur lieu de travail ou ailleurs.
+                En outre, à l'avenir, d'autres petites courses pourront être commandées via la plateforme.
+                De cette manière, tous les restaurants, cafés, fast-foods avec ou sans clients qui veulent digitaliser leurs services,
+                Special Food Store est le mieux adapté pour leur donner de la visibilité et en avoir beaucoup plus.
+                Différents systèmes de paiement sont disponibles pour faciliter les interactions,
+                de plus une équipe de livraison dédiée et respectueuse est en place pour s'assurer que les commandes sont livrées à temps et en toute sécurité.
               </p>
             </div>
         </div>

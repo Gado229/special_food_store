@@ -27,7 +27,6 @@
               <%= link_to 'Afficher', food %>
               <%= link_to 'Modifier', edit_food_path(food) %>
               <%= link_to 'Supprimer', food, method: :delete, data: { confirm: 'Are you sure?' } %>
-              <%= link_to 'Ma page', current_user %>
               <% else %>
               <%= link_to 'Plus de détails', food_path(food.id), class:'btn btn-outline-primary' %>
               <% end %>
@@ -40,8 +39,7 @@
       </table>
     </div>
     <hr>
-    <hr>
       <% end %>
     <% end %>
 </div>
-<%= paginate @foods %>
+<%= paginate @foods, class: 'center' %>

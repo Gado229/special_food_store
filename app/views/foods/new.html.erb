@@ -1,8 +1,15 @@
 <div class="banner">
-  <h1>Nouveau Plat</h1>
+  <div class="row">
+    <div class="col-sm-20">
+      <div class="card">
+        <div class="card-header">
+          <h1>Nouveau Plat</h1>
 
-  <%= render 'form', food: @food %>
-
-  <%= link_to 'Back', foods_path %>
-  
+          <%= render 'form', food: @food %>
+          <%= link_to 'Back', foods_path %>
+        </div>
+        <!-- ./col -->
+      </div>
+    </div>
+  </div>
 </div>

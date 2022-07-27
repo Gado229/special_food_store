@@ -15,4 +15,5 @@ class Food < ApplicationRecord
 
   scope :kaminari, -> (kaminari_page){ page(kaminari_page).per(5) }
 
+  paginates_per 10
 end

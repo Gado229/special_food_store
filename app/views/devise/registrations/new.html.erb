@@ -1,38 +1,68 @@
-<div class="banner">
-<h2>Sign up</h2>
+<div class="row">
+  <div class="col-sm-7">
+    <div class="card">
+      <div class="card-header">
 
-<ul class="nav justify-content-end">
-  <li class="nav-item">
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+        <h2>Enrégistre-toi ici !</h2>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+
+          <div class="field">
+            <%= f.label :name %><br />
+            <%= f.text_field :name, autofocus: true %>
+          </div>
+
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "S'inscrire" %>
+          </div>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+            <%= f.hidden_field :email ,value: "spfoodinvite@gmail.com" %>
+            <%= f.hidden_field :password ,value: "invite12345" %>
+          </div>
+<h5>Connecte-toi en tant qu'invité(e) !</h5>
+              <%= f.submit "Clique-ici", class: "btn btn-success" %>
+
+        <% end %>
+        </li>
+        <li class="nav-item">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+            <%= f.hidden_field :email ,value: "spfoodadmin@gmail.com" %>
+            <%= f.hidden_field :password ,value: "admin12345" %>
+          </div>
+<h5>Connecte-toi ici en tant qu'administrateur !</h5>
+              <%= f.submit "Clique-ici", class: "btn btn-success" %>
+
+        <% end %>
+        </li>
+        </ul>
+        <br />
+
+    <!-- /.card-body -->
+      </div>
+    <!-- / .card -->
+    </div>
+    <!-- ./col -->
   </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
 </div>

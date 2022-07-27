@@ -20,6 +20,7 @@ gem 'kaminari'
 gem 'rails_admin', '~> 3.0'
 gem 'cancancan', '~> 3.3.0'
 gem 'cloudinary'
+gem 'faker'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -28,7 +29,6 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'factory_bot_rails'
   gem 'spring'
-  gem 'faker'
   gem 'launchy'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

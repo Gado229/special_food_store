@@ -26,7 +26,7 @@ class RestaurantsController < ApplicationController
 
     respond_to do |format|
       if @restaurant.save
-        format.html { redirect_to restaurant_url(@restaurant), notice: "Félisitation, vous avez créé un Restaurant." }
+        format.html { redirect_to restaurant_url(@restaurant), notice: "Bravaux, vous avez créé un Restaurant." }
         format.json { render :show, status: :created, location: @restaurant }
       else
         format.html { render :new, status: :unprocessable_entity }

@@ -2,13 +2,26 @@
  *= require_tree .
  *= require_self
  */
- 
+
 *
 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Verdana', sans-serif;
+}
+
+.card
+{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #ffffe6;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  justify-content: center;
 }
 
 main
@@ -21,6 +34,14 @@ main
 body
 {
   background-color: #efe17c;
+}
+
+.hello
+{
+  text-align: center;
+  margin-top: 60px;
+  font-size: 1.2em;
+  text-decoration: none;
 }
 
 /* -------------------- header ----------------------- */
@@ -118,20 +139,22 @@ header .search .fa-solid
 
 /* -------------------- fin header ----------------------- */
 
-button
+.container button
 {
   position: relative;
-  margin-top: 25px;
+  margin-top: 60px;
   border-radius: 7px;
   border: 1px solid #fff;
 }
+
 .banner
 {
-  padding: 60px 20px 20px;
+  padding: 0;
   min-height: 100vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 664px;
 }
 
 .banner .content
@@ -188,8 +211,10 @@ button
 }
 .container
 {
+  top: 15px;
   position: relative;
-  margin-top: 25px;
+  margin: 0px 0px 0px 0px;
+  width: 950px;
 }
 
 .container .share_box
@@ -227,10 +252,26 @@ button
   height: 40px;
 }
 
-.main_box_head
+.main_box
 {
+text-align: center;
+}
+
+.main_box table td .main_box_head
+{
+  text-align: left;
   padding:15px;
   border-bottom: 1px solid #DBDBDB;
+}
+
+.main_box table td .main_box_head .main_box_menu
+{
+  text-align: center;
+}
+
+.main_box_head
+{
+
 }
 
 .main_box_img
@@ -262,11 +303,17 @@ button
 
 .alert
 {
-  position: relative;
-  padding: 2rem 1rem;
-  margin-bottom: -6rem;
-  border: 1px solid transparent;
+  width: 300px;
+  height: 20px;
+  padding: 0;
+  margin-bottom: 0px;
+  border: 1px solid;
   border-radius: 0.25rem;
+}
+
+.card
+{
+  left: 100px;
 }
 
 /* -------------------- footer ----------------------- */

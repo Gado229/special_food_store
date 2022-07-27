@@ -31,24 +31,19 @@
         <input type="text" placeholder="Recherche">
         <i class="fa-solid fa-magnifying-glass"></i>
       </div>
-
-    <!-- <ul>
-      <li><%= link_to "Démarrer", foods_path, class:"btn btn-primary btn-block" %></li>
-      <li><%= link_to "Ma Page", current_user, class:"btn btn-primary btn-block" %></li>
-      <li><%= link_to "Liste des Restaurants", restaurants_path, class:"btn" %></li>
-      <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class:"btn btn-primary btn-block" %></li>
-    </ul> -->
     </header>
-
-    <main class="container">
+    <div class="hello">
+      <% if current_user.present? %>
+          <p>Cher/chère <%= current_user.name %>, Bienvenu ! </p>
+        <% end %>
+    </div>
       <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>">
-          <%= value %>
-        </div>
-      <% end %>
+    <div class="alert alert-<%= key %>">
+        <%= value %>
+    </div>
+        <% end %>
       <%= yield %>
-    </main>
-    <hr>
+
     <footer class="footer">
       <p>&copy;Special Food Store 2022. All rights reserved. By Gado IMOROU</p>
     </footer>
