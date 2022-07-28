@@ -14,16 +14,6 @@ user2 = User.create!(
         password: "invite12345"
       )
 
-100.times do |n|
-  name = Faker::Games::Pokemon.name
-  email = Faker::Internet.email
-  password = "password"
-  User.create!(name: name,
-                email: email,
-                password: password,
-                )
-end
-
 user3 = User.create!(
   email: "gado@example.com",
   password:"123456",
