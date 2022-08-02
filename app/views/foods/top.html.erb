@@ -2,7 +2,6 @@
 <html>
   <head>
     <title></title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
   </head>
   <body>
@@ -21,9 +20,10 @@
                 </p>
                 <hr>
                 <% if user_signed_in? %>
-                <%= link_to "Démarrer", foods_path, class:'fs-15 btn btn-warning' %>
+                <%= link_to "Visiter", foods_path, class:'fs-15 btn btn-warning' %>
               <% else %>
-                <h6>Vous n'etes pas connecter, clique sur "connecter" ou créer un compte pour jouir de la platforme</h6>
+                <h6>Vous n'etes pas connecter, clique sur "Se connecter" ou créer un compte pour jouir de la platforme</h6>
+                <%= link_to "Me connecter", new_user_session_path, class:'fs-15 btn btn-warning' %>
               <% end %>
             </div>
           </div>

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'foods#top'
-  # get 'foods/top'
+  get 'foods/top'
 
   resources :restaurants
 

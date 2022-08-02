@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
   before_action :set_user, only: %i[ create show edit update comments ]
-before_action :forget_user, only: [:show]
+  before_action :forget_user, only: [:show]
 
  def index
    @users = User.all

@@ -2,7 +2,7 @@
   <button><%= link_to 'Faire une publication', new_food_path, class: 'btn btn-primary text-light' %></button>
      | |
   <button><%= link_to 'Ajoutez un Restaurant', new_restaurant_path, class: 'btn btn-secondary text-light' %></button>
-<br><br>
+<br />
     <% if @foods != nil %>
     <% @foods.each do |food| %>
     <div class="main_box">
