@@ -1,11 +1,10 @@
-<div class="banner">
-  <div class="row">
-    <div class="col-sm-10">
-      <div class="card">
-        <div class="card-header">
-          <h1>Profil de <%= @user.name %></h1>
-            <p><%= @user.email %></p>
-            <p><%= link_to 'Acceuil', foods_path, class: 'fs-10 btn btn-outline-secondary' %></p>
+<div class="row">
+  <div class="col-sm-7">
+    <div class="card">
+      <div class="card-header">
+        <h1>Profil de <%= @user.name %></h1>
+          <p><%= @user.email %></p>
+          <p><%= link_to 'Acceuil', foods_path, class: 'fs-10 btn btn-outline-secondary' %></p>
 
 
             <% if @foods.present? %>
@@ -23,7 +22,7 @@
                 <br>
           <%= link_to 'Afficher', food_path(food.id), class: 'fs-10 btn btn-outline-primary' %> |
           <%= link_to 'Modifier', edit_food_path(food.id), class:'fs-10 btn btn-outline-warning' %> |
-          <%= link_to 'Supprimer', food_path(food.id), method: :delete, data: { confirm: 'Are you sure you want to delete?' },
+          <%= link_to 'Supprimer', food_path(food.id), method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir supprimer?' },
                                                                                 class:'fs-10 btn btn-outline-danger' %> |
             <hr>
             <% end %>
@@ -34,10 +33,9 @@
           <% end %>
           <%= paginate @foods %>
 
-        <!-- / .card -->
-        </div>
-        <!-- ./col -->
+      <!-- / .card -->
       </div>
+      <!-- ./col -->
     </div>
   </div>
 </div>

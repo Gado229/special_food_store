@@ -12,6 +12,9 @@ module SpecialFoodStore
     config.load_defaults 6.0
     config.assets.initialize_on_precompile = false
 
+    # config.i18n.available_locales = [:en, :fr]
+    config.i18n.default_locale = :fr
+
     config.generators do |g|
       g.test_framework :rspec,
         fixtures: true,

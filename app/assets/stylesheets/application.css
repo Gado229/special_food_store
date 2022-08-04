@@ -22,6 +22,7 @@
   border: 1px solid;
   border-radius: 0.25rem;
   justify-content: center;
+  left: 100px;
 }
 
 main
@@ -308,11 +309,6 @@ text-align: center;
   margin-bottom: 0px;
   border: 1px solid;
   border-radius: 0.25rem;
-}
-
-.card
-{
-  left: 100px;
 }
 
 /* -------------------- footer ----------------------- */

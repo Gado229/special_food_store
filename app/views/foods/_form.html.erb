@@ -11,26 +11,27 @@
     </div>
   <% end %>
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :Nom %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
+    <%= form.label :Restaurant %>
     <%= form.select :restaurant_id, Restaurant.all.collect { |p| [p.name, p.id]}, class: "search_label", include_blank: true %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label :Description %>
     <%= form.text_field :description %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
+    <%= form.label :Prix %>
     <%= form.text_field :price %>
   </div>
 
   <div class="field">
-    <%= form.label :image %>
+    <%= form.label :Image %>
     <%= image_tag(@food.image.url) if @food.image && @food.image.url %>
 
     <%= form.file_field :image %>

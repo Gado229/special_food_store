@@ -1,15 +1,11 @@
-
   <div class="row">
-    <div class="col-sm-10">
+    <div class="col-sm-7">
       <div class="card">
         <div class="card-header">
-<% if @food.image_url %>
-  <%= image_tag @food.image.url, class: "main_box_img" %>
-<% end %>
-  <br />
-
-          <div class="container">
-            <div class="food-text">
+            <% if @food.image_url %>
+              <%= image_tag @food.image.url, class: "main_box_img" %>
+            <% end %>
+            <div class="food-text"><br />
               <p><strong>Titre:</strong> <%= @food.name %></p>
               <p><strong>Contenu:</strong> <%= @food.description %></p>
               <p><strong>Ce plat coûte</strong> <%= @food.price %> <span>FCFA</span></p>
@@ -34,14 +30,9 @@
           <h3>Ajoutez un commentaire</h3>
       <!-- rend le champ de saisie des commentaires à afficher sur la page détaillée du food. -->
         <%= render partial: 'comments/form', locals: { comment: @comment, food: @food } %>
+        <%= link_to 'Retourner', foods_path %><br />
 
-        <%= link_to 'Retourner', foods_path %>
-
-        <!-- /.card-body -->
-          </div>
-        <!-- / .card -->
         </div>
-        <!-- ./col -->
       </div>
     </div>
   </div>
