@@ -10,8 +10,8 @@ RSpec.describe "Comment", type: :system do
   restaurant = FactoryBot.create(:restaurant, name: 'mon restaurant', adress: 'cotonou', phone: '12345678' )
       visit new_user_session_path
         click_button 'Se connecter'
-      fill_in 'Email', with: 'imoroug@gmail.com'
-      fill_in 'Password', with: 'azerty'
+      fill_in 'user[email]', with: 'imoroug@gmail.com'
+      fill_in 'user[password]', with: 'azerty'
       click_button 'Se connecter'
   end
 
@@ -28,7 +28,7 @@ RSpec.describe "Comment", type: :system do
         fill_in "food[description]", with: "De chez nous"
         fill_in "food[price]", with: "2000"
         select 'mon restaurant'
-          click_button 'Create Food'
+          click_button 'Créer un(e) Food'
 
           click_on 'Retourner'
 
@@ -36,10 +36,10 @@ RSpec.describe "Comment", type: :system do
 
         fill_in "comment[content]", with: 'title test'
 
-           click_on 'Create Comment'
+           click_on 'Créer un(e) Comment'
 
         fill_in "comment[content]", with: 'title test2'
-           click_on 'Create Comment'
+           click_on 'Créer un(e) Comment'
          expect(page).to have_content 'title test2'
         end
       end
@@ -58,7 +58,7 @@ RSpec.describe "Comment", type: :system do
         fill_in "food[description]", with: "De chez nous"
         fill_in "food[price]", with: "2000"
         select 'mon restaurant'
-          click_button 'Create Food'
+          click_button 'Créer un(e) Food'
 
           click_on 'Retourner'
 
@@ -66,13 +66,13 @@ RSpec.describe "Comment", type: :system do
 
         fill_in "comment[content]", with: 'title test23'
 
-           click_on 'Create Comment'
+           click_on 'Créer un(e) Comment'
 
            click_on 'Modifier le commentaire'
 
         fill_in "comment[content]", with: 'test23'
 
-           click_button 'Update Comment'
+           click_button 'Modifier ce(tte) Comment'
 
          expect(page).to have_content 'test23'
 
@@ -93,7 +93,7 @@ RSpec.describe "Comment", type: :system do
         fill_in "food[description]", with: "De chez nous"
         fill_in "food[price]", with: "2000"
         select 'mon restaurant'
-          click_button 'Create Food'
+          click_button 'Créer un(e) Food'
 
           click_on 'Retourner'
 
@@ -101,7 +101,7 @@ RSpec.describe "Comment", type: :system do
 
         fill_in "comment[content]", with: 'title test23'
 
-           click_on 'Create Comment'
+           click_on 'Créer un(e) Comment'
 
            click_on 'Supprimer'
 

@@ -39,9 +39,9 @@ RSpec.describe 'Restaurant management function', type: :system do
       fill_in "restaurant[name]", with: 'A'
       fill_in "restaurant[adress]", with: 'AB'
       fill_in "restaurant[phone]", with: '12345678'
-        click_on "Create Restaurant"
+        click_on "Créer un(e) Restaurant"
 
-        click_on "Back"
+        click_on "Retour"
           expect(page).to have_content 'restaurant'
     end
   end
@@ -58,11 +58,11 @@ RSpec.describe 'Restaurant management function', type: :system do
       fill_in "restaurant[name]", with: 'A'
       fill_in "restaurant[adress]", with: 'AB'
       fill_in "restaurant[phone]", with: '12345678'
-        click_on "Create Restaurant"
+        click_on "Créer un(e) Restaurant"
 
-        click_on "Back"
+        click_on "Retour"
 
-        click_button 'Acceuil'
+        click_on 'Acceuil'
 
           expect(page).to have_content 'Ma Page'
     end

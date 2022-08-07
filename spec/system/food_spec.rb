@@ -36,7 +36,7 @@ RSpec.describe 'Food management function', type: :system do
         fill_in "food[description]", with: "De chez nous"
         fill_in "food[price]", with: "2000"
         select 'mon restaurant'
-          click_button 'Create Food'
+          click_button 'Créer un(e) Food'
 
           click_on 'Retourner'
 
@@ -60,13 +60,13 @@ RSpec.describe 'Food management function', type: :system do
           fill_in "food[description]", with: "Nouriture locale"
           fill_in "food[price]", with: "5000"
           select "mon restaurant"
-            click_button 'Create Food'
+            click_button 'Créer un(e) Food'
 
             click_on 'Retourner'
 
             click_on 'Modifier'
 
-            click_on 'Back'
+            click_on 'Retour'
 
         expect(page).to have_content 'Food'
        end
@@ -87,7 +87,7 @@ RSpec.describe 'Food management function', type: :system do
             fill_in "food[description]", with: "Locale"
             fill_in "food[price]", with: "2500"
             select "mon restaurant"
-              click_button 'Create Food'
+              click_button 'Créer un(e) Food'
 
               click_on 'Retourner'
 
@@ -114,7 +114,7 @@ RSpec.describe 'Food management function', type: :system do
           fill_in "food[description]", with: "Locale"
           fill_in "food[price]", with: "2500"
           select "mon restaurant"
-            click_button 'Create Food'
+            click_button 'Créer un(e) Food'
 
             click_on 'Retourner'
 
@@ -122,11 +122,10 @@ RSpec.describe 'Food management function', type: :system do
 
             fill_in "comment[content]", with: 'Pate'
 
-            click_on "Create Comment"
+            click_on "Créer un(e) Comment"
           expect(page).to have_content 'Food'
        end
      end
   end
-
-
+  
 end
