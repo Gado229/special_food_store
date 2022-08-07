@@ -6,10 +6,12 @@ class CommentsController < ApplicationController
     @food = Food.find(params[:food_id])
     @comment.user_id = current_user.id
     respond_to do |format|
-      if @comment.save!
+      if @comment.save
+        format.html { redirect_to @food, notice: 'Le commentaire a été créé avec succès.' }
         format.js { render :index }
       else
-        format.html { redirect_to food_path(@food), notice: 'Impossible de commenter...' }
+        format.html { redirect_to food_path(@food), notice: "Veuillez écrire un commentaire" }
+        format.js { render :index }
       end
     end
   end

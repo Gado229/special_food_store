@@ -2,7 +2,7 @@ require 'rails_helper'
 RSpec.describe 'User registration / login / logout function', type: :system do
 
   before do
-  @user = User.create!(id:4, name: 'Invité(e)', email: "spfoodinvite@gmail.com", password: "invite12345", confirmed_at: DateTime.now)
+  @user = User.create!(id:5, name: 'Invité(e)', email: "spfoodinvite@gmail.com", password: "invite12345", confirmed_at: DateTime.now)
 
   @admin_user = User.create!(id:1, name: 'Admin', email: "monadministrateur@gmail.com", password: "madmin1", confirmed_at: DateTime.now, admin: true)
 end
@@ -32,7 +32,7 @@ end
         fill_in 'user[email]', with: "spfood@gmail.com"
         fill_in 'user[password]', with: "12345678"
         click_on "S'inscrire"
-        expect(page).to have_content 'Welcome! You have signed up successfully.'
+        expect(page).to have_content 'Bienvenue ! Vous vous êtes bien enregistré(e).'
       end
       it "Un test qui saute à l'écran de connexion lorsque vous n'êtes pas connecté" do
         visit 'foods'
@@ -65,7 +65,7 @@ describe 'Session functionality testing' do
 
       it "Vous pouvez accéder à votre propre écran de détails" do
         click_on 'Ma Page'
-        expect(current_path).to eq user_path(4)
+        expect(current_path).to eq user_path(5)
       end
 
 
@@ -93,8 +93,8 @@ end
       end
 
       it 'The administrator should have access to the user\'s details screen' do
-        visit "/users/4"
-        expect(current_path).to eq user_path(4)
+        visit "/users/5"
+        expect(current_path).to eq user_path(5)
       end
   end
 

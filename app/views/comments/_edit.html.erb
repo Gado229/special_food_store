@@ -1,7 +1,7 @@
 <%= form_with(model: [food, comment]) do |form| %>
   <% if comment.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+      <h2><%= pluralize(comment.errors.count, "erreur") %> interdit l'enregistrement de ce commentaire:</h2>
       <ul>
       <% comment.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,9 +11,9 @@
   <% end %>
   <div class="field">
     <%= form.text_area :content, id: "comment_content_#{food.id}" %>
-    <%= form.label :content %>
+    <%= form.label :Modifie_ton_commentaire %>
   </div>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Modifier ce(tte) Comment" %>
   </div>
 <% end %>
