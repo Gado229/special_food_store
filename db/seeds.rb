@@ -51,42 +51,42 @@ user6 = User.create!
 restaurant = Restaurant.create!
 (
   name: "Les Capsules",
-  adress: "Zopa, près du CS La Grande Academie"
+  adress: "Zopa, près du CS La Grande Academie",
   phone: "96775656"
 )
 
 restaurant1 = Restaurant.create!
 (
   name: "Chawarma Express",
-  adress: "Abomez-calavi, face à l'entrée principale du Campus UAC"
+  adress: "Abomez-calavi, face à l'entrée principale du Campus UAC",
   phone: "96000006"
 )
 
 restaurant2 = Restaurant.create!
 (
   name: "Chez Tanti",
-  adress: "Zopa, près du CS La Grande Academie"
+  adress: "Zopa, près du CS La Grande Academie",
   phone: "96000007"
 )
 
 restaurant3 = Restaurant.create!
 (
   name: "Chez Maman Gracia",
-  adress: "Face au Petit Portail du CEG1 Abomey-calavi"
+  adress: "Face au Petit Portail du CEG1 Abomey-calavi",
   phone: "96000008"
 )
 
 restaurant4 = Restaurant.create!
 (
   name: "Le Chef",
-  adress: "Zopa, près du CS La Grande Academie"
+  adress: "Zopa, près du CS La Grande Academie",
   phone: "96000009"
 )
 
 restaurant5 = Restaurant.create!
 (
   name: "Le Bénin",
-  adress: "Maromilitaire Rue derrière CINÉ LE BENIN"
+  adress: "Maromilitaire Rue derrière CINÉ LE BENIN",
   phone: "96000010"
 )
 
