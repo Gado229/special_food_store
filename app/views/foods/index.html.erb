@@ -20,8 +20,8 @@
           <div class="main_box_head">
             <h5><%= User.find(food.user_id).name%></h5>
             Ce plât est nommé <h5><%= food.name %></h5>
-            Ce plât coûte <strong><%= food.price %>FCFA</strong>
-            Par le restaurant <h4><%= Restaurant.find(food.restaurant_id).name %></h4>
+            Et il coûte <h5><%= food.price %>FCFA</h5>
+            Publié par le restaurant<h4><%= Restaurant.find(food.restaurant_id).name %></h4>
             <%= "Il y à #{time_ago_in_words(food.created_at || Time.now)}" %>
             <br />
             <br />
