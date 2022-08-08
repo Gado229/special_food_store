@@ -13,10 +13,10 @@
 
   <div class="comment">
     <%= form.label :Commenter_ici_! %>
-    <%= form.text_area :content, placeholder: "Écrire ici" %>
+    <%= form.text_area :content, class: 'form-control', placeholder: "écrit le commentaire ici" %>
   </div>
-
+<br />
   <div class="actions">
-    <%= form.submit "Créer un(e) Comment"%>
+    <%= form.submit %>
   </div>
 <% end %>

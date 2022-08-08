@@ -11,12 +11,12 @@
 
             <div class="field">
               <%= f.label :Email %><br />
-              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: "écrit ton email ici" %>
             </div>
 
             <div class="field">
               <%= f.label :Mot_de_passe %><br />
-              <%= f.password_field :password, autocomplete: "current-password" %>
+              <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: "écrit ton mot de passe ici" %>
             </div>
 
               <% if devise_mapping.rememberable? %>
@@ -41,8 +41,7 @@
 <h5>Connecte-toi en tant qu'invité(e) !</h5>
                   <%= f.submit "Clique-ici !!!", class: "btn btn-success" %>
               <% end %>
-            </li>
-            <li class="nav-item">
+
               <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                 <div class="field">
                   <%= f.hidden_field :email ,value: "spfoodadmin@gmail.com" %>

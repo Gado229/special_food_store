@@ -2,40 +2,29 @@
   <div class="col-sm-7">
     <div class="card">
       <div class="card-header">
-        <h1>Profil de <%= @user.name %></h1>
-          <p><%= @user.email %></p>
+        <h1>Profil de <%= @user.name %> et votre email est : <%= @user.email %></h1>
           <p><%= link_to 'Acceuil', foods_path, class: 'fs-10 btn btn-outline-secondary' %></p>
-
-
             <% if @foods.present? %>
-
             <% if current_user.id == @user.id %>
               <% @foods.each do |food| %>
               <% if food.image.file.nil? %>
                 <% else %>
-                <%= image_tag food.image.url, class: 'main_box_img' %>
-              <% end %><br />
-                <%= food.name %><br>
-                <%= food.description %>
-                <%= food.price %>
-                <br>
-                <br>
+                <%= image_tag food.image.url, class: 'main_box_img' %><br /><br />
+              <% end %>
+                <p><%= food.name %></p>
+                <p><%= food.description %></p>
+                <p><%= food.price %></p>
           <%= link_to 'Afficher', food_path(food.id), class: 'fs-10 btn btn-outline-primary' %> |
           <%= link_to 'Modifier', edit_food_path(food.id), class:'fs-10 btn btn-outline-warning' %> |
-          <%= link_to 'Supprimer', food_path(food.id), method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir supprimer?' },
-                                                                                class:'fs-10 btn btn-outline-danger' %> |
+          <%= link_to 'Supprimer', food_path(food.id), method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir supprimer?' }, class:'fs-10 btn btn-outline-danger' %> |
             <hr>
             <% end %>
             <% else %>
                <h5>Il n'y a pas de poste créée par cet utilisateur</h5>
             <% end %>
-
           <% end %>
-          <%= paginate @foods %>
-
-      <!-- / .card -->
       </div>
-      <!-- ./col -->
     </div>
   </div>
+  <%= paginate @foods %>
 </div>

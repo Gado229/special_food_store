@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @food, notice: 'Le commentaire a été créé avec succès.' }
+        format.html { redirect_to food_url(@food), notice: 'Le commentaire a été créé avec succès.' }
         format.js { render :index }
       else
         format.html { redirect_to food_path(@food), notice: "Veuillez écrire un commentaire" }

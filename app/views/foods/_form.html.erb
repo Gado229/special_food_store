@@ -1,7 +1,7 @@
-<%= form_with(model: @food, local: true) do |form| %>
-  <% if @food.errors.any? %>
+<%= form_with(model: food, local: true) do |form| %>
+  <% if food.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@food.errors.count, "error") %> prohibited this food from being saved:</h2>
+      <h2><%= pluralize(food.errors.count, "erreur") %> interdit l'enregistrement de ce plat:</h2>
 
       <ul>
         <% @food.errors.full_messages.each do |message| %>
@@ -12,30 +12,30 @@
   <% end %>
   <div class="field">
     <%= form.label :Nom %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: 'form-control', placeholder: "écrit le nom du plat ici" %>
   </div>
 
   <div class="field">
     <%= form.label :Restaurant %>
-    <%= form.select :restaurant_id, Restaurant.all.collect { |p| [p.name, p.id]}, class: "search_label", include_blank: true %>
+    <%= form.select :restaurant_id, Restaurant.all.collect { |p| [p.name, p.id]}, class: "search_label form-control", prompt: "sélectionne le restaurant ici" %>
   </div>
 
   <div class="field">
     <%= form.label :Description %>
-    <%= form.text_field :description %>
+    <%= form.text_field :description, class: 'form-control', placeholder: "écrit la description du plat ici" %>
   </div>
 
   <div class="field">
     <%= form.label :Prix %>
-    <%= form.text_field :price %>
+    <%= form.text_field :price, class: 'form-control', placeholder: "écrit le prix du plat ici" %>
   </div>
 
   <div class="field">
     <%= form.label :Image %>
-    <%= image_tag(@food.image.url) if @food.image && @food.image.url %>
+    <%= image_tag(@food.image.url) if @food.image && @food.image.url %><br><br>
 
     <%= form.file_field :image %>
-    <%= form.hidden_field :image_cache %>
+    <%= form.hidden_field :image_cache %><br><br>
   </div>
 
   <div class="actions">

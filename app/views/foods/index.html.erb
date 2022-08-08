@@ -22,17 +22,19 @@
             Ce plât est nommé <h5><%= food.name %></h5>
             Ce plât coûte <strong><%= food.price %>FCFA</strong>
             Par le restaurant <h4><%= Restaurant.find(food.restaurant_id).name %></h4>
-            <div class="main_box_menu">
+            <%= "Il y à #{time_ago_in_words(food.created_at || Time.now)}" %>
+            <br />
+            <br />
+
               <% if current_user.id == food.user.id %>
-              <%= link_to 'Afficher', food %>
-              <%= link_to 'Modifier', edit_food_path(food) %>
-              <%= link_to 'Supprimer', food, method: :delete, data: { confirm: 'Etes-vous certain ?' } %>
+              <%= link_to 'Afficher', food , class: 'fs-10 btn btn-outline-primary'%>
+              <%= link_to 'Modifier', edit_food_path(food), class:'fs-10 btn btn-outline-warning' %>
+              <%= link_to 'Supprimer', food, method: :delete, data: { confirm: 'Etes-vous certain ?' }, class:'fs-10 btn btn-outline-danger' %>
               <% else %>
               <%= link_to 'Plus de détails', food_path(food.id), class:'btn btn-outline-primary' %>
               <% end %>
-              <%= "Il y à #{time_ago_in_words(food.created_at || Time.now)}" %><br>
               <h2><%= food.comments.count %> commentaires</h2>
-            </div>
+
           </div>
         </td>
        </tr>
@@ -42,4 +44,4 @@
       <% end %>
     <% end %>
 </div>
-<%= paginate @foods, class: 'center' %>
+<%= paginate @foods %>

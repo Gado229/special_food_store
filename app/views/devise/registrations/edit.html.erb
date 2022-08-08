@@ -5,7 +5,7 @@
 
   <div class="field">
     <%= f.label :Email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: "écrit ton email ici" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -14,7 +14,7 @@
 
   <div class="field">
     <%= f.label :Mot_de_passe %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder: "écrit ton mot de passe ici" %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> charactères minimum</em>
@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= f.label :Mot_de_passe_de_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: "réécrit ton mot de passe pour confirmation ici" %>
   </div>
 
   <div class="field">

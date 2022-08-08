@@ -12,12 +12,12 @@
 
           <div class="field">
             <%= f.label :Nom %><br />
-            <%= f.text_field :name, autofocus: true %>
+            <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: "écrit ton nom et prénoms ici" %>
           </div>
 
           <div class="field">
             <%= f.label :Email %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: "écrit un email ici" %>
           </div>
 
           <div class="field">
@@ -25,7 +25,7 @@
             <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> charactères minimum)</em>
             <% end %><br />
-            <%= f.password_field :password, autocomplete: "new-password" %>
+            <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder: "écrit un mot de passe ici" %>
           </div>
 
           <div class="actions">
@@ -44,8 +44,7 @@
               <%= f.submit "Clique-ici", class: "btn btn-success" %>
 
         <% end %>
-        </li>
-        <li class="nav-item">
+
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
             <%= f.hidden_field :email ,value: "spfoodadmin@gmail.com" %>
