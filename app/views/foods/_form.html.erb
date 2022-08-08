@@ -32,7 +32,7 @@
 
   <div class="field">
     <%= form.label :Image %>
-    <%= image_tag(@food.image.url) if @food.image && @food.image.url %><br><br>
+    <%= image_tag(@food.image.url) if @food.image && @food.image.url %>
 
     <%= form.file_field :image %>
     <%= form.hidden_field :image_cache %><br><br>
